@@ -1,0 +1,57 @@
+{
+  "name": "@deepwhale-cn/dsh-ai-label-stamp",
+  "version": "0.1.0",
+  "description": "给 docx/png/txt 写入 GB 45438 隐式标识元数据（AIGC 关键词 + 五要素），是 dsh-ai-label-verify 验标的执行端",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin",
+    "skill",
+    "AI标识",
+    "打标",
+    "GB45438"
+  ],
+  "files": [
+    "lib",
+    "skill",
+    "bin",
+    "docs",
+    "cordis.patch.yml",
+    "tests/fixtures",
+    "README.md"
+  ],
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-ai-label-stamp": "bin/cli.mjs"
+  },
+  "engines": {
+    "dsh": ">=0.1.0-rc.6 <0.3.0",
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feely0208/dsh-ai-label-stamp.git"
+  },
+  "homepage": "https://www.deepwhale.org.cn/skills.html",
+  "bugs": {
+    "url": "https://github.com/feely0208/dsh-ai-label-stamp/issues"
+  },
+  "dependencies": {
+    "@deepwhale-cn/dsh-guard-core": "^0.10.1"
+  }
+}
